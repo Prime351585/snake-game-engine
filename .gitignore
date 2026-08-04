@@ -12,8 +12,7 @@ build.log
 build.out
 build.rsp
 
-# Distribution binaries (keep the README, ignore executables)
-dist/*.exe
+# Distribution DLLs (not needed with static linking)
 dist/*.dll
 
 # IDE settings (personal, not project-wide)

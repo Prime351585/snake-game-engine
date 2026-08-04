@@ -17,9 +17,17 @@ Play Snake directly on your RGB keyboard!
 ### Step 1 — Start the OpenRGB Server
 
 1. Open **OpenRGB**.
-2. Go to the **SDK Server** tab.
-3. Click **Start Server**.
-4. Make sure it says `Listening on 0.0.0.0:6742` (or `127.0.0.1:6742`).
+2. Go to the **Devices** tab — make sure your keyboard appears in the list:
+
+![OpenRGB Devices tab showing keyboard detection](../assets/openrgb_devices_tab.png)
+
+3. Go to the **SDK Server** tab.
+4. Make sure **Server Host** is `0.0.0.0` and **Server Port** is `6742`.
+5. Click **Start Server**.
+
+![OpenRGB SDK Server tab showing host and port settings](../assets/openrgb_sdk_server.png)
+
+> ⚠️ **Important:** If your Server Host or Port is different from what's shown above, change it to **Host: `0.0.0.0`** and **Port: `6742`**. The game won't connect otherwise.
 
 > **Tip:** If you don't see the SDK Server tab, update to the latest version of OpenRGB.
 
@@ -61,7 +69,9 @@ Found keyboard: Your Keyboard Name (22x6 matrix, 110 LEDs)
 | Problem | Solution |
 |---------|----------|
 | `Failed to connect to OpenRGB Server` | Make sure OpenRGB is running and the SDK Server is started |
-| `No keyboard device found` | Your keyboard may not be supported by OpenRGB — check the [supported devices list](https://openrgb.org/devices.html) |
+| `No keyboard device found` | Your keyboard may not be supported by OpenRGB — check the [supported devices list](https://openrgb.org/devices_0.9.html?search=) |
+
+> **💡 Tip:** The supported devices list may not include every device. Some keyboards work with OpenRGB even if they're not listed — download OpenRGB and check if your keyboard is detected.
 | `Keyboard has no Matrix zone` | Your keyboard's LED layout isn't mapped as a matrix in OpenRGB |
 | DLL errors on launch | Place `snake_game.exe` in the same folder it came in — don't move it alone |
 | Keys don't respond | Click the console window to make sure it has focus |

@@ -105,13 +105,24 @@ g++ -I OpenRGB-cppSDK/include -I OpenRGB-cppSDK/external \
 
 The game communicates with your keyboard through OpenRGB's SDK server over a local TCP connection.
 
-### Step-by-Step
+### Step 1 — Verify Your Keyboard is Detected
 
-1. **Open OpenRGB.**
-2. Navigate to the **SDK Server** tab (on the right side of the window).
-3. Set the **Host** to `0.0.0.0` (or `127.0.0.1`) and **Port** to `6742`.
-4. Click **Start Server**.
-5. You should see: `Server started on port 6742`.
+Open **OpenRGB** and go to the **Devices** tab. Your keyboard should appear in the left panel:
+
+![OpenRGB Devices tab showing keyboard detection](assets/openrgb_devices_tab.png)
+
+If your keyboard doesn't show up, click **Rescan Devices**. If it still doesn't appear, your keyboard may not be supported — check the [supported devices list](https://openrgb.org/devices_0.9.html?search=).
+
+### Step 2 — Start the SDK Server
+
+1. Click the **SDK Server** tab.
+2. Make sure the **Server Host** is set to `0.0.0.0` and the **Server Port** is `6742`.
+3. Click **Start Server**.
+
+![OpenRGB SDK Server tab showing host and port settings](assets/openrgb_sdk_server.png)
+
+> [!IMPORTANT]
+> If your **Server Host** or **Server Port** shows a different value than what's shown above, change it to **Host: `0.0.0.0`** and **Port: `6742`**. The game connects to `127.0.0.1:6742` by default and won't work with a different address.
 
 ### Verify It's Running
 
@@ -212,7 +223,9 @@ The game is a **TCP client** that sends RGB color data to a **localhost server**
 |---------|----------|
 | **DLL errors** on launch | The binary is statically linked — if you still see DLL errors, rebuild with `-static` flag or run from inside the `dist/` folder |
 | **"Failed to connect to OpenRGB Server"** | Start the OpenRGB SDK server (see [instructions above](#-starting-the-openrgb-server)) |
-| **"No keyboard device found"** | Your keyboard isn't detected by OpenRGB — check the [supported devices list](https://openrgb.org/devices.html) |
+| **"No keyboard device found"** | Your keyboard isn't detected by OpenRGB — check the [supported devices list](https://openrgb.org/devices_0.9.html?search=) |
+
+> **💡 Tip:** The supported devices list may not include every device. Some keyboards work with OpenRGB even if they're not listed — download OpenRGB and check if your keyboard is detected.
 | **"Keyboard has no Matrix zone"** | Your keyboard's LED layout isn't mapped as a matrix in OpenRGB |
 | **Arrow keys don't respond** | Click the console window to give it focus. The game reads keyboard state globally. |
 | **LEDs stuck after game** | Open OpenRGB and switch to any lighting profile, or restart OpenRGB |
