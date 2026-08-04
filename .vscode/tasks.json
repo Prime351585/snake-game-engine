@@ -1,0 +1,57 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build Snake Engine",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
+            "args": [
+                "-I${workspaceFolder}/OpenRGB-cppSDK/include",
+                "-I${workspaceFolder}/OpenRGB-cppSDK/external",
+                "-I${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Essential",
+                "-I${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Network",
+                "-I${workspaceFolder}/src",
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/game.cpp",
+                "${workspaceFolder}/src/server.cpp",
+                "${workspaceFolder}/src/input.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/src/Client.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/src/Color.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/src/DeviceInfo.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/src/Exceptions.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/src/MiscUtils.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/src/ProtocolCommon.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/src/ProtocolMessages.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Essential/BinaryStream.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Essential/ContainerUtils.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Essential/CriticalError.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Essential/LangUtils.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Essential/StreamUtils.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Essential/StringUtils.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Network/HostInfo.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Network/NetAddress.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Network/Socket.cpp",
+                "${workspaceFolder}/OpenRGB-cppSDK/external/CppUtils-Network/SystemErrorInfo.cpp",
+                "-o",
+                "${workspaceFolder}/dist/snake_game.exe",
+                "-static-libgcc",
+                "-static-libstdc++",
+                "-static",
+                "-lws2_32"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build Snake Engine RGB with static linking"
+        }
+    ],
+    "version": "2.0.0"
+}

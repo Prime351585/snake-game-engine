@@ -1,0 +1,27 @@
+# Build artifacts
+*.o
+*.obj
+
+# Binaries in root (old build leftovers)
+/main.exe
+/libwinpthread-1.dll
+
+# Build logs
+build.err
+build.log
+build.out
+build.rsp
+
+# Distribution binaries (keep the README, ignore executables)
+dist/*.exe
+dist/*.dll
+
+# IDE settings (personal, not project-wide)
+.vscode/settings.json
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
